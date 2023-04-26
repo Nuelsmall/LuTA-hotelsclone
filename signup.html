@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hotels.ng/signin</title>
+  </head>
+  <body>
+    <style>
+
+* {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* styling for the nav bar begins*/
+nav {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: #00aeff;
+  color: #fff;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 700;
+  padding: 0 50px;
+}
+
+nav>*:not(:nth-child(1)) {
+  border-right: 2px solid #fff;
+  padding: 0 10px;
+}
+
+.logoImg {
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: x-large;
+  margin-right: auto;
+}
+
+.whatsapp-icon {
+  width: 30px;
+}
+
+nav .support {
+  background-color: rgb(6, 54, 104);
+  margin: auto 10px;
+  padding-right: 20px;
+  display: flex;
+  border-radius: 25px;
+  height: 38px;
+  text-align: center;
+}
+
+.support>img {
+  border-radius: 50%;
+}
+
+.support-text {
+  font-size: .8rem;
+  color: rgb(26, 182, 255);
+}
+.support-text > .dropdown-item {
+  padding: 20px 50px;
+}
+.dropdown-item>i {
+  color: #00aeff;
+}
+
+
+#tel {
+  font-size: .9rem;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav .currency {
+  display: flex;
+  align-items: center;
+}
+
+.currency>i {
+  margin-left: 5px;
+}
+
+nav .account {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+nav .account> * {
+  margin-left: 5px;
+}
+
+#dropdown-icon {
+  position: absolute;
+  right: 50px;
+  color: #ffff;
+}
+
+.dropdown-menu {
+  display: none;
+  margin-top: 12px;
+  border: none;
+}
+
+.showDropdown {
+  display: block;
+  position: absolute;
+  background-color: #ffff;
+  margin-left: 40px;
+  color: #555;
+}
+
+.dropdown-item {
+  padding: 10px;
+}
+
+.dropdown-item #tel {
+  color: rgb(6, 54, 104);
+  /* padding: 5px; */
+}
+
+.showCurrencyDropdown {
+  background-color: #fff;
+  color: #555;
+  right: 40px;
+  width: 220px;
+  display: block;
+  position: absolute;
+  font-size: 14px;
+  margin-top: 18px;
+}
+
+.showCurrencyDropdown>* {
+  padding: 0 15px;
+}
+
+.showCurrencyDropdown>.dropdown-item {
+  line-height: 30px;
+}
+
+.dropdown-item:hover {
+  color: #fff;
+  background-color:rgb(143, 141, 140, 20%);
+}
+
+/* Account dropdown */
+.account-dropdown-menu {
+  display: none;
+  width: 200px;
+}
+
+.showAccount {
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  font-size: 14px;
+  color: #464646;
+  padding: 20px;
+  right: 0px;
+  margin-top: 12px;
+}
+
+.account-dropdown-menu button {
+  background-color: #00aeff;
+  width: 170px;
+  color: #fff;
+  height: 32px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+  padding-bottom: 5px;
+}
+/* styling for the nav ends here */
+      .container {
+        width: 20vw;
+        margin: auto;
+        
+      }
+
+      .center-block {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+      
+     h4,.h4 {
+        margin-top: 9px;
+        margin-bottom: 9px;
+        padding-bottom: 15px;
+        text-align: center;
+        color: #292e37;
+        font-weight: 100;
+        font-size: 16px;
+      }
+
+      a {
+        color: #d9230f;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .btn {
+        font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .btn-sm,
+      .btn-group-sm > .btn {
+        padding: 5px 5px;
+        font-size: 12px;
+        line-height: 1.5;
+        border-radius: 3px;
+      }
+      .btn {
+        display: inline-block;
+        margin-bottom: 0;
+        font-weight: normal;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        background-image: none;
+        border: 1px solid transparent;
+        white-space: nowrap;
+        padding: 8px 12px;
+        line-height: 1.42857143;
+        border-radius: 4px;
+        
+      }
+      .social {
+        text-align: justify !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        padding: 3px !important;
+      }
+      .social-text {
+        margin: auto;
+        font-size: large;
+      }
+      .btn {
+        font-family: "Lato";
+        background-color: #00aeff;
+        width: 320px;
+        margin: 0 auto;
+        text-align: center;
+        color: white;
+      }
+
+      .form-group > input {
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #292e37;
+        font-weight: 400;
+      }
+      .form-control {
+        display: block;
+        width: 320px;
+        height: 36px;
+        padding: 8px 12px;
+        font-size: 13px;
+        line-height: 1.42857143;
+        color: #777777;
+        background-color: #ffffff;
+        background-image: none;
+        border: 1px solid #dddddd;
+        border-radius: 4px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);        
+     }
+        .Gimg{
+          background-color: #fff;
+          border-radius: 2px;          
+        }
+
+        /* styling for the popup */
+        .popup{
+          width: 400px;
+          background: #fff;
+          border-radius: 6px;
+          position: absolute;
+          top: 0%;
+          left: 50%;
+          transform: translate(-50%, -50%) scale(0.1);
+          text-align: center;
+          padding: 0 30px 30px;
+          color: #333;
+          border: 1px solid #777777;
+          visibility: hidden;
+          transition: transform 0.4s, top  0.4s;
+        }
+
+        .open-popup{
+          visibility: visible;
+          top: 50%;
+          transform: translate(-50%, -50%) scale(1);
+        }
+
+        .popup img{
+          width: 100px;
+          margin-top: -50px;
+          border-radius: 50%;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .popup h2{
+          font-size: 38px;
+          font-weight: 500;
+          margin: 30px 0 10px;
+        }
+
+        .popup button{
+          width: 100%;
+          margin-top: 50px;
+          padding: 10px 0;
+          background: #6fd649;
+          color: #fff;
+          border: 0;
+          outline: none;
+          font-size: 18px;
+          border-radius: 4px;
+          cursor: pointer;
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+<nav class="nav">
+  <a class="logoImg" href="#">Hotels.ng</a>
+  <a href="#">
+    <img class="whatsapp-icon" src="./img/whatsapp-icon.svg" alt="whatsapp icon" srcset="" />
+  </a>
+  <div class="dropdown">
+    <div class="support">
+      <img src="./img/navbar-contact-min.jpg" alt="support">
+      <span id="supportDropdownButton" role="button">
+        <span class="support-text">You can call us to book your hotel</span>
+        <p>
+          <span id="tel" href="tel:+">+234 700 880 8800
+            <i class="fa fa-caret-down"></i>
+          </span>
+        </p>
+      </span>
+    </div>
+    <div>
+      <div class="dropdown-menu">
+        <p class="dropdown-item">
+          <i class="fa-brands fa-whatsapp"></i>
+          <a id="tel" href="tel:+">+234 700 880 8800</a>
+        </p>
+        <p class="dropdown-item">
+          <i class="fa-solid fa-phone"></i>
+          <a id="tel" href="tel:+">+234 700 880 8800</a>
+        </p>
+        <p class="dropdown-item">
+          <i class="fa-solid fa-phone"></i>
+          <a id="tel" href="tel:+">+234 700 880 8800</a>
+        </p>
+        <p class="dropdown-item">
+          <i class="fa-solid fa-phone"></i>
+          <a id="tel" href="tel:+">+234 700 880 8800</a>
+        </p>
+        <p class="dropdown-item">
+          <i class="fa-brands fa-skype"></i>
+          <a id="tel" href="tel:+">+234 700 880 8800</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="div dropdown">
+    <div class="currency">
+      <img src="./img/nigeria-flag.png" width="32px" height="23px">
+      <i class="fa-solid fa-naira-sign"></i>
+      <i class="fa fa-caret-down"></i>
+    </div>
+    <div class="dropdown-menu" id="currency-drop">
+      <p>Choose your prefared currency for the hotel rates: </p>
+      <p class="dropdown-item">Nigerian Naira</p>
+      <p class="dropdown-item">European Euro</p>
+      <p class="dropdown-item">U.S Dollar</p>
+      <p class="dropdown-item">British Pounds Sterling</p>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="account" role="button">
+      <img src="img/user-avatar.svg" alt="user" width="30px" height="35px">
+      <span>Account</span>
+      <i class="fa fa-caret-down"></i>
+    </div>
+    <div class="account-dropdown-menu">
+      <p>Sign In to access exclusive members deals</p>
+      <button class=" btn btn-primary btn-block h-100">
+        <a href="./signin.html">Sign In</a>
+      </button>
+      <p>New here? <a href="#">Sign up</a></p>
+    </div>
+  </div>
+</nav>
+
+    <div class="container">
+      <form id="form" action="process" role="form" method="POST">
+        <input
+          name="_token"
+          value="f71b9c872522ffc452068faf6b6b9ca1"
+          type="hidden"
+        />
+        <div class="form-group">
+          <a href="https://hotels.ng"
+            ><img src="img/signup_logo.png" class="center-block"
+          /></a>
+          <h4>SIGN IN TO CONTINUE</h4>
+
+          <p style="color: #f00; text-align: center"><small></small></p>
+
+          <div class="">
+            <!-- <a href="social/facebook" class="btn" id="facebook"><i class="fa fa-facebook fa-lg"></i></a> -->
+            <!-- <a href="#" class="btn" id="twitter"><i class="fa fa-twitter fa-lg"></i></a> -->
+            <a href="social/google" class="btn btn-sm social">
+              <div class="social-icon">
+                <img class="Gimg" src="img/google.png" alt="google icon" />
+              </div>
+              <div class="social-text">Continue with Google</div>
+            </a>
+          </div>
+          <hr />
+
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Email address"
+            name="email_address"
+            required
+          />
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            name="password"
+            required
+          />
+          <!-- <input type="hidden" name="action" value="signin" />
+          <input type="hidden" name="redirecturl" value="dashboard" />
+          <div class="checkbox"> -->
+            <!--<label for="form-elem-1"><input type="checkbox" name="rememberme">Remember me</label>-->
+          </div>
+          <input
+            type="submit"
+            class="btn sign"
+            id="btn"
+            onclick="openPopup()"
+            style="color: #fff"
+            value="Sign in"
+            />
+          <p>
+            Don't have an account?
+            <a href="https://hotels.ng/signup?redirect=dashboard">Sign up</a>
+          </p>
+
+          <hr />
+
+          <p style="text-align: center">
+            <small
+              ><a href="https://hotels.ng/forgotpassword"
+                >Forgot password?</a
+              ></small
+            >
+          </p>
+        </div>
+      </form>
+      <div class="popup" id="pop" >
+        <img src="img/tick.png">
+        <h2>Login Successful!</h2>
+        <p>You have sucessfully log in, click Ok to refresh. Thanks!</p>
+        <button type="submit" onclick="closePopup()" >Ok</button>
+      </div>
+    </div>
+    
+<script src="app.js"></script>
+  </body>
+</html>

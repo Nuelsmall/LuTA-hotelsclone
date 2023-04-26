@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,700;1,900&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="addHotel.css">
+  <title>Add_HOTEL</title>
+</head>
+<body>
+    <!-- nav bar coding begins here -->
+    <nav class="nav">
+        <a class="logoImg" href="#">Hotels.ng</a>
+        <a href="#">
+          <img class="whatsapp-icon" src="./img/whatsapp-icon.svg" alt="whatsapp icon" srcset="" />
+        </a>
+        <div class="dropdown">
+          <div class="support">
+            <img src="./img/navbar-contact-min.jpg" alt="support">
+            <span id="supportDropdownButton" role="button">
+              <span class="support-text">You can call us to book your hotel</span>
+              <p>
+                <span id="tel" href="tel:+">+234 700 880 8800
+                  <i class="fa fa-caret-down"></i>
+                </span>
+              </p>
+            </span>
+          </div>
+          <div>
+            <div class="dropdown-menu">
+              <p class="dropdown-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <a id="tel" href="tel:+">+234 700 880 8800</a>
+              </p>
+              <p class="dropdown-item">
+                <i class="fa-solid fa-phone"></i>
+                <a id="tel" href="tel:+">+234 700 880 8800</a>
+              </p>
+              <p class="dropdown-item">
+                <i class="fa-solid fa-phone"></i>
+                <a id="tel" href="tel:+">+234 700 880 8800</a>
+              </p>
+              <p class="dropdown-item">
+                <i class="fa-solid fa-phone"></i>
+                <a id="tel" href="tel:+">+234 700 880 8800</a>
+              </p>
+              <p class="dropdown-item">
+                <i class="fa-brands fa-skype"></i>
+                <a id="tel" href="tel:+">+234 700 880 8800</a>
+              </p>
+            </div>
+          </div>
+        </div>
+    
+        <div class="div dropdown">
+          <div class="currency">
+            <img src="./img/nigeria-flag.png" width="32px" height="23px">
+            <i class="fa-solid fa-naira-sign"></i>
+            <i class="fa fa-caret-down"></i>
+          </div>
+          <div class="dropdown-menu" id="currency-drop">
+            <p>Choose your prefared currency for the hotel rates: </p>
+            <p class="dropdown-item">Nigerian Naira</p>
+            <p class="dropdown-item">European Euro</p>
+            <p class="dropdown-item">U.S Dollar</p>
+            <p class="dropdown-item">British Pounds Sterling</p>
+          </div>
+        </div>
+    
+        <div class="dropdown">
+          <div class="account" role="button">
+            <img src="img/user-avatar.svg" alt="user" width="30px" height="35px">
+            <span>Account</span>
+            <i class="fa fa-caret-down"></i>
+          </div>
+          <div class="account-dropdown-menu">
+            <p>Sign In to access exclusive members deals</p>
+            <button class=" btn btn-primary btn-block h-100">
+              <a href="./signin.html">Sign In</a>
+            </button>
+            <p>New here? <a href="#">Sign up</a></p>
+          </div>
+        </div>
+      </nav>
+      <!-- nav bar coding ends here -->
+
+  <div class="hotelAdd_container">
+    <h2 class="hotel-add-header">Add your hotel to Hotels.ng</h2>
+    <p class="hotel-add-sub-header">We will make you available to millions of customers in and outside Nigeria.</p>
+  </div>
+    <div class="hotel-add">
+      <div class="main-field">
+          <form class="form" method="post" action="https://hotels.ng/hotel/post_add_hotel" data-toggle="validator" role="form">
+              <h4 class="hotel-info">Hotel Information</h4>
+                <!-- <input type="hidden" value="1647449776" name="antispamsum1" class="antispamsum1">
+              <input type="hidden" value="209475272" name="antispamsum2" class="antispamsum2">
+              <input type="hidden" value="1856925048" name="total_num_value" class="antispamsum">
+              <input type="hidden" name="provider" value="hotelsng">
+              <input type="hidden" name="property_type" value="hotel">
+              <input type="hidden" name="country" value="Nigeria"> -->
+              <div class="form-group ">
+                  <label>Hotel Name</label>
+                  <input type="text" class="form-control" value="" name="name" id="hotelname" placeholder="Hotel name" required="">
+              </div>
+              <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" class="form-control" id="hotelEmailAddress" name="hotel_email" placeholder="Email address" required="">
+              </div>
+              <div class="form-group">
+                  <div class="row">
+                      <div class="col-xs-6 input-phone">
+                          <label>Phone Number </label>
+                          <input type="text" class="form-control" id="hotel_phone" name="phone" placeholder="Phone number" required="">
+                      </div>
+                      <div class="col-xs-6 input-web">
+                          <label>Website Address</label>
+                          <input type="url" id="hotelWebsite" name="website" class="form-control" placeholder="Website">
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="form-group locations ">
+                  <div class="row">
+                      <div class="col-xs-6 input-state">
+                          <label>Location</label>
+                          <select name="state_id" class="select-control" id="hotelLocation" required="">
+                              <option>Select State</option>
+                              <option value="1">Abia</option>
+                              <option value="2">Abuja</option>
+                              <option value="754">Abuja Federal Capital Territory</option>
+                              <option value="3">Adamawa</option>
+                              <option value="4">Akwa Ibom</option>
+                              <option value="5">Anambra</option>
+                              <option value="6">Bauchi</option>
+                              <option value="7">Bayelsa</option>
+                              <option value="8">Benue</option>
+                              <option value="9">Borno</option>
+                              <option value="10">Cross River</option>
+                              <option value="11">Delta</option>
+                              <option value="12">Ebonyi</option>
+                              <option value="13">Edo</option>
+                              <option value="14">Ekiti</option>
+                              <option value="15">Enugu</option>
+                              <option value="337">FCT</option>
+                              <option value="16">Gombe</option>
+                              <option value="17">Imo</option>
+                              <option value="18">Jigawa</option>
+                              <option value="19">Kaduna</option>
+                              <option value="20">Kano</option>
+                              <option value="21">Katsina</option>
+                              <option value="22">Kebbi</option>
+                              <option value="23">Kogi</option>
+                              <option value="24">Kwara</option>
+                              <option value="25">Lagos</option>
+                              <option value="26">Nasarawa</option>
+                              <option value="27">Niger</option>
+                              <option value="28">Ogun</option>
+                              <option value="29">Ondo</option>
+                              <option value="30">Osun</option>
+                              <option value="31">Oyo</option>
+                              <option value="32">Plateau</option>
+                              <option value="33">Rivers</option>
+                              <option value="1382">Samaru</option>
+                              <option value="1378">sokokto</option>
+                              <option value="1379">sokokto</option>
+                              <option value="34">Sokoto</option>
+                              <option value="35">Taraba</option>
+                              <option value="36">Yobe</option>
+                              <option value="37">Zamfara</option>
+                          </select>
+                      </div>
+                      <div class="col-xs-6 input-city">
+                          <label>City</label>
+                          <input type="text" class="form-control state" name="city" placeholder="Enter city/town" required="">
+                      </div>
+                  </div>
+              </div>
+
+              <div class="form-group">
+                  <label>Address</label>
+                  <input type="text" name="address" id="hotelAddress" class="form-control" placeholder="Address" required="">
+              </div>
+
+              <h4 class="hotel-add-category margin-top35">Personal Information</h4>
+              <div class="form-group">
+                  <label>Full Name</label>
+                  <input type="text" name="adder_name" id="adder_name" class="form-control" placeholder="Full Name" required="">
+              </div>
+              <div class="form-group">
+                  <label>Email Address</label>
+                  <input type="email" name="adder_email" id="adderEmailAddress" class="form-control" placeholder="Email Address">
+              </div>
+
+              <label class="v7-custom-checkbox" for="agree">
+                  <p>I agree to the Hotels.ng <a href="https://hotels.ng/terms" target="_blank">Terms of use</a></p>
+                  <input type="checkbox" id="agree" required="">
+                  <span class="v7-checkbox-checkmark"></span>
+              </label>
+
+              <!-- Recaptcha -->
+              <div class="g-recaptcha" data-sitekey="6LfQsxEUAAAAAA798ciXI6teTE5pjkWYyni-9-mg"><div style="width: 304px; height: 78px;"><div><iframe title="reCAPTCHA" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LfQsxEUAAAAAA798ciXI6teTE5pjkWYyni-9-mg&amp;co=aHR0cHM6Ly9ob3RlbHMubmc6NDQz&amp;hl=en-GB&amp;v=6MY32oPwFCn9SUKWt8czDsDw&amp;size=normal&amp;cb=p2akot7kgn3o" width="304" height="78" role="presentation" name="a-ag2cv64c3r7c" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div><iframe style="display: none;"></iframe></div>
+
+              <div class="submit-button">
+                  <button class="btn">Add your hotel</button>
+              </div>
+          </form>
+      </div>
+      <!-- coding for FAQ -->
+      <div class="faq">
+          <div class="faq-header">Frequently Asked Questions</div>
+          <div class="faq-content">
+              <div class="question">
+                  <p class="q">Q: Is it free to list a hotel?</p>
+                  <p class="a">A: Yes, listing a hotel on our website is completely free.</p>
+              </div>
+              <div class="question">
+                  <p class="q">Q: How else can I add hotels?</p>
+                  <p class="a">A: You can send an email to partnerships@hotels.ng with information about the hotel. Hotels.ng support team will contact you a short while afterwards.</p>
+              </div>
+              <div class="question">
+                  <p class="q">Q: Can I list a hotel that is not mine?</p>
+                  <p class="a">A: Yes you can, however you must ensure that you have permission to add the hotel and the information you provide is valid.</p>
+              </div>
+              <div class="question">
+                  <p class="q">Q: Can I add more than one hotel</p>
+                  <p class="a">A: Yes, you can add as many hotels as you like, as long as you have the correct hotel information and permission to add the hotels.</p>
+              </div>
+              <div class="question">
+                  <p class="q">Q: What if I do not have all the information available?</p>
+                  <p class="a">A: You can enter the basic information of the hotel (Name, address, phone number) and send us all other data by email later (partnerships@hotels.ng)</p>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
