@@ -631,7 +631,7 @@ transition: ease-in-out 0.7s all;
 
   .getAppText{
     padding-top: 60px;
-    marging: left 20px;
+    margin: left 20px;
    }
 
  /* styling for the popup */
@@ -693,8 +693,7 @@ transition: ease-in-out 0.7s all;
 }
 
 .enter{
-   margin-left: ;
-  position: relative;
+   position: relative;
   }
 
   .lock{
